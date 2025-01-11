@@ -9,6 +9,7 @@ import { Input } from './components/ui/input'
 import { Button } from './components/ui/button'
 import CreateTaskDialog from './components/createTaskDialog'
 import TaskList from './components/taskList'
+import UpdateTaskDialog from './components/updateTaskDialog'
 
 const formSchema = z.object({
   query: z.string(),
@@ -64,6 +65,7 @@ const App = () => {
         </div>
         <TaskList />
       </div>
+      <UpdateTaskDialog />
     </div>
   )
 }
