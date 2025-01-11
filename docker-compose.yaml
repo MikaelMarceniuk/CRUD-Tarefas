@@ -13,6 +13,9 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3000
+      - DATABASE_URL=postgresql://docker:docker@database:5432/crudtarefas?schema=public
+    depends_on:
+      - database
 
   frontend:
     build:
@@ -27,3 +30,15 @@ services:
     command: npm run start:dev
     environment:
       - NODE_ENV=development
+    depends_on:
+      - database
+
+  database:
+    image: postgres:12.22-alpine
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=crudtarefas
