@@ -1,0 +1,12 @@
+{
+  "name": "crud-tarefas",
+  "version": "1.0.0",
+  "repository": "git@github.com:MikaelMarceniuk/CRUD-Tarefas.git",
+  "author": "Mikael Marceniuk <mika.marceniuk@gmail.com>",
+  "license": "MIT",
+	"private": true,
+	"workspaces": {
+		"packages": ["packages/**"],
+		"nohoist": ["**/**"]
+	}
+}
