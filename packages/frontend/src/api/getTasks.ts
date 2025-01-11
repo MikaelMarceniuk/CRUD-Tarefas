@@ -19,7 +19,10 @@ type ApiResp = SuccessApiResp | ErrroApiResp
 
 const GetTasksApi = async ({ query }: GetTasksApiParams): Promise<Task[]> => {
   try {
-    const { data } = await axiosClient.get<ApiResp>('/tasks')
+    console.log('query: ', query)
+    const { data } = await axiosClient.get<ApiResp>('/tasks', {
+      params: { name: query },
+    })
     return data.isSuccess ? data.data : []
   } catch (err) {
     console.log('GetTasksApi.err: ', err)
