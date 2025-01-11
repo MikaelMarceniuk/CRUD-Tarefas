@@ -46,7 +46,7 @@ const CreateTaskDialog = () => {
 
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button variant={'secondary'}>
           <Plus />
         </Button>
