@@ -1,11 +1,14 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+import { Search } from 'lucide-react'
+
 import { Form, FormControl, FormField, FormItem } from './components/ui/form'
 import { Input } from './components/ui/input'
 import { Button } from './components/ui/button'
-import { Search } from 'lucide-react'
 import CreateTaskDialog from './components/createTaskDialog'
+import TaskList from './components/taskList'
 
 const formSchema = z.object({
   query: z.string(),
@@ -59,6 +62,7 @@ const App = () => {
           <h2>Tarefas</h2>
           <CreateTaskDialog />
         </div>
+        <TaskList />
       </div>
     </div>
   )
